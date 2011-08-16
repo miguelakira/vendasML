@@ -41,6 +41,7 @@ class BuyersController < ApplicationController
   # POST /buyers.xml
   def create
     @buyer = Buyer.new(params[:buyer])
+    @buyer.profit = @buyer.sale.price - (@buyer.sale.price * @buyer.sale.tax) - @buyer.sale.cost
 
     respond_to do |format|
       if @buyer.save
