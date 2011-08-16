@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  nickname: MyString
+  sale_id: 1
+  sent: false
+  finished: false
+  sent_at: 2011-08-16 16:35:43
+
+two:
+  name: MyString
+  email: MyString
+  nickname: MyString
+  sale_id: 1
+  sent: false
+  finished: false
+  sent_at: 2011-08-16 16:35:43

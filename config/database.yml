@@ -2,7 +2,7 @@
 #   gem install sqlite3
 development:
   adapter: mysql
-  database: tester_app_development
+  database: vendaml
   user: root
   password: root
   pool: 5

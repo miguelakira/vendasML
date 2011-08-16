@@ -1,4 +1,10 @@
 Vendasml::Application.routes.draw do
+  resources :messages
+
+  resources :sales
+
+  resources :buyers
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

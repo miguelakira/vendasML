@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @sale.title %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @sale.price %>
+</p>
+
+<p>
+  <b>Tax:</b>
+  <%= @sale.tax %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @sale.cost %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @sale.quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_sale_path(@sale) %> |
+<%= link_to 'Back', sales_path %>
