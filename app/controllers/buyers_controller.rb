@@ -25,7 +25,8 @@ class BuyersController < ApplicationController
   # GET /buyers/new.xml
   def new
     @buyer = Buyer.new
-
+    @sales = Sale.all
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @buyer }
