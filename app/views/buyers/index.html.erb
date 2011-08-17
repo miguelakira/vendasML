@@ -16,7 +16,7 @@
   </tr>
 
 <% @buyers.each do |buyer| %>
-  <% if buyer.sent == false %>
+  <% if buyer.sent == false && buyer.finished == false  %>
       <tr>
         <td><%= buyer.name.capitalize %></td>
         <td><%= buyer.email %></td>
@@ -54,7 +54,7 @@
   </tr>
 
 <% @buyers.each do |buyer| %>  
-  <% if buyer.sent == true %>
+  <% if buyer.sent == true && buyer.finished == false %>
       <tr>
         <td><%= buyer.name %></td>
         <td><%= buyer.email %></td>
