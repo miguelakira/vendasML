@@ -1,7 +1,7 @@
 <div class = "le-havre-rounded">Compras em Aberto</div>
 <br />
 <table>
-  <% if @buyers_in_progress.nil? %>
+  <% if @buyers_in_progress.empty? %>
     <td>Não há compradores nesta seção.</td>
   <% else %>
       <%= render :partial => 'buyer_info_new', :locals => { :buyers => @buyers_in_progress }  %>
@@ -11,7 +11,7 @@
 
 <div class = "le-havre-rounded">Compras Enviadas</div>
 <table>
-  <% if @buyers_sent.nil? %>
+  <% if @buyers_sent.empty? %>
     <td>Não há compradores nesta seção.</td>
   <% else %>
       <%= render :partial => 'buyer_info', :locals => { :buyers => @buyers_sent }  %> 
