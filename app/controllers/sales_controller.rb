@@ -2,7 +2,7 @@ class SalesController < ApplicationController
   # GET /sales
   # GET /sales.xml
   def index
-    @sales = Sale.all
+    @sales = Sale.all(:order => 'title')
 
     respond_to do |format|
       format.html # index.html.erb
