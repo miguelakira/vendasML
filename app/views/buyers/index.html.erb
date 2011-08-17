@@ -1,21 +1,95 @@
-<h1>Listing buyers</h1>
+<div class = "le-havre-rounded">Compras em Aberto</div>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Nickname</th>
-    <th>Sale</th>
+    <th>Nome</th>
+    <th>E-Mail</th>
+    <th>Apelido</th>
+    <th>Produto</th>
     <th>Lucro</th>
-    <th>Sent</th>
-    <th>Finished</th>
-    <th>Sent at</th>
+    <th>Enviado?</th>
+    <th>Finalizado?</th>
+    <th>Enviado em:</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @buyers.each do |buyer| %>
+  <% if buyer.sent == false %>
+      <tr>
+        <td><%= buyer.name.capitalize %></td>
+        <td><%= buyer.email %></td>
+        <td><%= buyer.nickname %></td>
+        <td <%if buyer.sale.title.index("usado")%><%= "class = 'usado'"%><%end%>><%= buyer.sale.title %></td>
+        <td><%= '%.2f' % buyer.profit %></td>
+        <td><%= buyer.sent %></td>
+        <td><%= buyer.finished %></td>
+        <td><%= buyer.sent_at %></td>
+        <td><%= link_to 'Show', buyer %></td>
+        <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
+        <td><%= link_to 'Destroy', buyer, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <%end%>
+<% end %>
+</table>
+
+<br />
+<div class = "le-havre-rounded">Compras Enviadas</div>
+<table>
+
+
+  <tr>
+    <th>Nome</th>
+    <th>E-Mail</th>
+    <th>Apelido</th>
+    <th>Produto</th>
+    <th>Lucro</th>
+    <th>Enviado?</th>
+    <th>Finalizado?</th>
+    <th>Enviado em:</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @buyers.each do |buyer| %>  
+  <% if buyer.sent == true %>
+      <tr>
+        <td><%= buyer.name %></td>
+        <td><%= buyer.email %></td>
+        <td><%= buyer.nickname %></td>
+        <td><%= buyer.sale.title %></td>
+        <td><%= '%.2f' % buyer.profit %></td>
+        <td><%= buyer.sent %></td>
+        <td><%= buyer.finished %></td>
+        <td><%= buyer.sent_at %></td>
+        <td><%= link_to 'Show', buyer %></td>
+        <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
+        <td><%= link_to 'Destroy', buyer, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <%end%>
+<% end %>
+</table>
+<br />
+<div class = "le-havre-rounded">Compras Finalizadas</div>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>E-Mail</th>
+    <th>Apelido</th>
+    <th>Produto</th>
+    <th>Lucro</th>
+    <th>Enviado?</th>
+    <th>Finalizado?</th>
+    <th>Enviado em:</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @buyers.each do |buyer| %>
+  <% if buyer.finished == true %>
   <tr>
     <td><%= buyer.name %></td>
     <td><%= buyer.email %></td>
@@ -29,8 +103,10 @@
     <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
     <td><%= link_to 'Destroy', buyer, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+  <%end%>
 <% end %>
 </table>
+
 
 <br />
 
