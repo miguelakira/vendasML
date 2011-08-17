@@ -1,5 +1,5 @@
 @charset "utf-8";
-body { margin:0; padding:0; width:100%; font-family:droid-sans; height:100%;}
+body { margin:0; padding:0; width:100%; font-family: droid-sans, arial, sans-serif; height:100%; font-size:14px;}
 html { padding:0; margin:0; height:100%;}
 
 a { text-decoration:none;}
@@ -42,10 +42,10 @@ a:hover { text-decoration:underline;}
 .menu ul li { float:left; margin:0; padding:0 5px; border:0;}
 .menu ul li a { float:left; margin:0; padding:12px 0 13px 0; color:#646464; font:normal 13px droid-sans, Helvetica, sans-serif; text-decoration:none;}
 .menu ul li a span { padding:12px 10px 13px 10px; background:none;}
-.menu ul li a:hover { color:#fff; background: url(/images/r_menu.gif) right no-repeat;}
-.menu ul li a:hover span {color:#fff; background:url(/images/l_menu.gif) left no-repeat;}
-.menu ul li a.active { color:#fff;background:url(/images/r_menu.gif) right no-repeat;}
-.menu ul li a.active span {color:#fff; background:url(/images/l_menu.gif) left no-repeat;}
+.menu ul li a:hover { color:#fff; background: none;}
+.menu ul li a:hover span {color:#fff; background: none;}
+.menu ul li a.active { color:#fff;background: none;}
+.menu ul li a.active span {color:#fff; background: none;}
 /*header_text_bg*/
 .header_text_bg { height:20px; margin:0; padding:0; background: #1c1c1c url(/images/slider_bg.gif)  bottom repeat-x;}
 .header_text_bg2 { height:87px; margin:0; padding:0; background: #1c1c1c  url(/images/header_text_bg2.gif)  bottom repeat-x;}

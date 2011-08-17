@@ -8,7 +8,7 @@
     <th>Lucro</th>
     <th>Quantidade</th>
     <th></th>
-    <th></th>
+    <th>Ações</th>
     <th></th>
   </tr>
 
@@ -20,9 +20,9 @@
     <td><%= sale.cost %></td>
     <td><%= '%.2f' % (sale.price - (sale.price * sale.tax) - sale.cost) %></td>
     <td><%= sale.quantity %></td>
-    <td><%= link_to 'Show', sale %></td>
-    <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
-    <td><%= link_to 'Destroy', sale, :confirm => 'Tem certeza?', :method => :delete %></td>
+    <td><%= link_to 'Mostrar', sale %></td>
+    <td><%= link_to 'Editar', edit_sale_path(sale) %></td>
+    <td><%= link_to 'Deletar', sale, :confirm => 'Tem certeza que deseja deletar?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
