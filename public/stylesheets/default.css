@@ -10,7 +10,7 @@ a:hover { text-decoration:underline;}
 .blok_header { margin:0; padding:0; background:#1c1c1c;}
 .header { width:980px; margin:0 auto; padding:0;}
 /* logo */
-.logo { font: normal 36px le-havre-rounded; padding-top: 18px; margin:0; width:400px; float:left; color:white;}
+.logo { font: normal 36px le-havre-rounded; padding-top: 32px; margin:0; width:400px; float:left; color:white;}
 
 .aspirina {
   background: url(/images/logo.png) left no-repeat;
