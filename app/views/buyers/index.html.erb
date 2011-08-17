@@ -18,7 +18,7 @@
 <% @buyers.each do |buyer| %>
   <% if buyer.sent == false && buyer.finished == false  %>
       <tr>
-        <td><%= buyer.name.capitalize %></td>
+        <td><%= buyer.name.capitalize.slice(/\w+/) %></td>
         <td><%= buyer.email %></td>
         <td><%= buyer.nickname %></td>
         <td <%if buyer.sale.title.downcase.index("usado")%><%= "class = 'usado'"%><%end%>><%= buyer.sale.title %></td>
@@ -56,7 +56,7 @@
 <% @buyers.each do |buyer| %>  
   <% if buyer.sent == true && buyer.finished == false %>
       <tr>
-            <td><%= buyer.name.capitalize %></td>
+<td><%= buyer.name.capitalize.slice(/\w+/) %></td>
         <td><%= buyer.email %></td>
         <td><%= buyer.nickname %></td>
         <td <%if buyer.sale.title.downcase.index("usado")%><%= "class = 'usado'"%><%end%>><%= buyer.sale.title %></td>
@@ -91,7 +91,7 @@
 <% @buyers.each do |buyer| %>
   <% if buyer.finished == true %>
   <tr>
-        <td><%= buyer.name.capitalize %></td>
+        <td><%= buyer.name.capitalize.slice(/\w+/) %></td>
         <td><%= buyer.email %></td>
         <td><%= buyer.nickname %></td>
         <td <%if buyer.sale.title.downcase.index("usado")%><%= "class = 'usado'"%><%end%>><%= buyer.sale.title %></td>
