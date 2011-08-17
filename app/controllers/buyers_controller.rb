@@ -44,7 +44,7 @@ class BuyersController < ApplicationController
   def create
     @buyer = Buyer.new(params[:buyer])
     @buyer.profit = @buyer.sale.price - (@buyer.sale.price * @buyer.sale.tax) - @buyer.sale.cost
-
+    @buyer.sale.quantity = @buyer.sale.quantity - 1
     respond_to do |format|
       if @buyer.save
         format.html { redirect_to(@buyer, :notice => 'Buyer was successfully created.') }
