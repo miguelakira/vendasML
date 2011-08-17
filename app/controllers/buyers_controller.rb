@@ -25,7 +25,7 @@ class BuyersController < ApplicationController
   # GET /buyers/new.xml
   def new
     @buyer = Buyer.new
-    @sales = Sale.all
+    @sales = Sale.find(:all, :conditions => ["quantity > ?", 0])
     
     respond_to do |format|
       format.html # new.html.erb

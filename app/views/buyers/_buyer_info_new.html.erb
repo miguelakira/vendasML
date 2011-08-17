@@ -2,7 +2,7 @@
         <td class = "column"><%= buyer.name.capitalize.slice(/\w+/) %></span></td>
         <td><%= buyer.email %></td>
         <td><%= buyer.nickname %></td>
-        <td><%= truncate(buyer.address, length:80) %></td>
+        <td><%= truncate(buyer.address, length:40) %></td>
         <td <%if buyer.sale.title.downcase.index("usado")%><%= "class = 'usado'"%><%end%>><%= buyer.sale.title %></td>
         <td><%= '%.2f' % buyer.profit %></td>
         <td <%unless buyer.paid %><%= "class = 'usado'"%><%end%>><%= buyer.paid %>
