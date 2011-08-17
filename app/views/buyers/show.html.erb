@@ -17,9 +17,20 @@
 
 <p>
   <b>Sale:</b>
+  <%= @buyer.sale.title %>
+</p>
+<p>
+  <b>Endereço:</b>
+  <%= @buyer.address %>
+</p>
+<p>
+  <b>Cidade / Estado</b>
+  <%= @buyer.city %>, <%= @buyer.state %>
+</p>
+<p>
+  <b>Sale:</b>
   <%= @buyer.sale_id %>
 </p>
-
 <p>
   <b>Sent:</b>
   <%= @buyer.sent %>
