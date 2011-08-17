@@ -1,0 +1,12 @@
+<tr>
+        <td class = "column"><%= buyer.name.capitalize.slice(/\w+/) %></span></td>
+        <td><%= buyer.email %></td>
+        <td><%= buyer.nickname %></td>
+        <td><%= truncate(buyer.address, length:80) %></td>
+        <td <%if buyer.sale.title.downcase.index("usado")%><%= "class = 'usado'"%><%end%>><%= buyer.sale.title %></td>
+        <td><%= '%.2f' % buyer.profit %></td>
+        <td><%= buyer.sent_at %></td>
+        <td><%= link_to 'Show', buyer %></td>
+        <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
+        <td><%= link_to 'Destroy', buyer, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>

@@ -28,6 +28,10 @@
     <%= f.collection_select(:sale_id, @sales, :id, :title) %>
   </div>
   <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
     <%= f.label :sent %><br />
     <%= f.check_box :sent %>
   </div>
@@ -35,7 +39,10 @@
     <%= f.label :finished %><br />
     <%= f.check_box :finished %>
   </div>
-  
+  <div class="field">
+    <%= f.label :paid %><br />
+    <%= f.check_box :paid %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -2,7 +2,19 @@
 <html>
 <head>
   <title>Vendasml</title>
-  <%= stylesheet_link_tag :all %>
+    <link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /> 
+<link href="/stylesheets/default.css" media="screen" rel="stylesheet" type="text/css" /> 
+<link href="/stylesheets/forms.css" media="screen" rel="stylesheet" type="text/css" /> 
+<link href="/stylesheets/grid.css" media="screen" rel="stylesheet" type="text/css" /> 
+
+<link href="/stylesheets/reset.css" media="screen" rel="stylesheet" type="text/css" /> 
+<link href="/stylesheets/scaffold.css" media="screen" rel="stylesheet" type="text/css" /> 
+<link href="/stylesheets/typography.css" media="screen" rel="stylesheet" type="text/css" /> 
+  <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/stylesheets/src/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  
+
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 
@@ -17,11 +29,11 @@
             <div class="logo">MercadoLivre Organizer</div>
       <div class="menu">
         <ul>
-          <li><b><a href="index.html" class="active"><span>Home</span></a></li>
-          <li><a href="about.html"><span>About Us</span></a></li>
-          <li><a href="services.html"><span>Services</span></a></li>
-          <li><a href="services.html"><span>Portfolio</span></a></li>
-          <li><a href="contact.html"><span>Contact us</span></a></li></b>
+          <li><b><a href="/index" class="active"><span>Início</span></a></li>
+          <li><a href="/buyers"><span>Compradores</span></a></li>
+          <li><a href="/sales"><span>Produtos</span></a></li>
+          <li><a href="/messages"><span>Mensagens</span></a></li>
+          <li><a href="/contact"><span>Contato</span></a></li></b>
         </ul>
       </div> <!-- menu -->
       <div class="clr"></div>

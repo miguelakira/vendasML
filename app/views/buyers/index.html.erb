@@ -5,9 +5,10 @@
     <th>Nome</th>
     <th>E-Mail</th>
     <th>Apelido</th>
+    <th>Endereço</th>
     <th>Produto</th>
-    <th>Lucro</th>
-    <th>Enviado em:</th>
+    <th>Lucro</th>  
+    <th>Pago?</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,18 +16,7 @@
 
 <% @buyers.each do |buyer| %>
   <% if buyer.sent == false && buyer.finished == false  %>
-      <tr>
-        <td><%= buyer.name.capitalize.slice(/\w+/) %></td>
-        <td><%= buyer.email %></td>
-        <td><%= buyer.nickname %></td>
-        <td <%if buyer.sale.title.downcase.index("usado")%><%= "class = 'usado'"%><%end%>><%= buyer.sale.title %></td>
-        <td><%= '%.2f' % buyer.profit %></td>
-        
-        <td><%= buyer.sent_at %></td>
-        <td><%= link_to 'Show', buyer %></td>
-        <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
-        <td><%= link_to 'Destroy', buyer, :confirm => 'Are you sure?', :method => :delete %></td>
-      </tr>
+      <%= render :partial => 'buyer_info_new', :locals => { :buyer => buyer }  %>
   <%end%>
 <% end %>
 </table>
@@ -40,9 +30,10 @@
     <th>Nome</th>
     <th>E-Mail</th>
     <th>Apelido</th>
+    <th>Endereço</th>
     <th>Produto</th>
     <th>Lucro</th>
-    <th>Enviado em:</th>
+    <th>Enviado Em</th>
     <th></th>
     <th></th>
     <th></th>
@@ -50,19 +41,7 @@
 
 <% @buyers.each do |buyer| %>  
   <% if buyer.sent == true && buyer.finished == false %>
-      <tr>
-<td><%= buyer.name.capitalize.slice(/\w+/) %></td>
-        <td><%= buyer.email %></td>
-        <td><%= buyer.nickname %></td>
-        <td <%if buyer.sale.title.downcase.index("usado")%><%= "class = 'usado'"%><%end%>><%= buyer.sale.title %></td>
-        <td><%= '%.2f' % buyer.profit %></td>
-        
-        <td><%= buyer.sent_at %></td>
-        <td><%= link_to 'Show', buyer %></td>
-        <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
-        <td><%= link_to 'Destroy', buyer, :confirm => 'Are you sure?', :method => :delete %></td>
-      </tr>
-  <%end%>
+    <%= render :partial => 'buyer_info', :locals => { :buyer => buyer }  %>  <%end%>
 <% end %>
 </table>
 <br />
@@ -72,9 +51,10 @@
     <th>Nome</th>
     <th>E-Mail</th>
     <th>Apelido</th>
+    <th>Endereço</th>
     <th>Produto</th>
     <th>Lucro</th>
-    <th>Enviado em:</th>
+    <th>Enviado Em</th>
     <th></th>
     <th></th>
     <th></th>
@@ -82,18 +62,7 @@
 
 <% @buyers.each do |buyer| %>
   <% if buyer.finished == true %>
-  <tr>
-        <td><%= buyer.name.capitalize.slice(/\w+/) %></td>
-        <td><%= buyer.email %></td>
-        <td><%= buyer.nickname %></td>
-        <td <%if buyer.sale.title.downcase.index("usado")%><%= "class = 'usado'"%><%end%>><%= buyer.sale.title %></td>
-        <td><%= '%.2f' % buyer.profit %></td>
-        
-        <td><%= buyer.sent_at %></td>
-        <td><%= link_to 'Show', buyer %></td>
-        <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
-        <td><%= link_to 'Destroy', buyer, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+    <%= render :partial => 'buyer_info', :locals => { :buyer => buyer }  %>
   <%end%>
 <% end %>
 </table>
