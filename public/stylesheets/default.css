@@ -30,7 +30,7 @@ a:hover { text-decoration:underline;}
 .menu ul li a.active span {color:#fff; background:url(/images/l_menu.gif) left no-repeat;}
 /*header_text_bg*/
 .header_text_bg { height:20px; margin:0; padding:0; background: #1c1c1c url(/images/slider_bg.gif)  bottom repeat-x;}
-.header_text_bg2 { margin:0; padding:0; background: #1c1c1c  url(/images/header_text_bg2.gif)  bottom repeat-x;}
+.header_text_bg2 { height:87px; margin:0; padding:0; background: #1c1c1c  url(/images/header_text_bg2.gif)  bottom repeat-x;}
 /*header_text*/
 .header_text { height:376px; margin:0 auto; padding:0; width:985px; background: url(/images/main_slider_bg.jpg) top center no-repeat;}
 .header_text2 { height:154px; margin:0 auto; padding:0; width:985px; background:  url(/images/header_text_bg_main2.gif) top center no-repeat;}
@@ -43,7 +43,7 @@ a:hover { text-decoration:underline;}
 /********** body **********/
 .body_resize { margin:0; padding:0; background:#f1f1f1 url(/images/body_bg_main.gif) top repeat-x;}
 .body_resize2 { margin:0; padding:0; background:#f1f1f1;}
-.body_top { background:url(/images/body_img_top.jpg) top center no-repeat; padding:30px 0 0 0;}
+.body_top { background:url(/images/body_top.gif) top center repeat-x; height:120px;}
 .body_top2 { padding:30px 0 0 0; background: #f1f1f1 url(/images/body2_bg.gif) top center no-repeat;}
 .body_bottom { background:url(/images/body_img_bottom2.gif) bottom center no-repeat;  }
 .body { width:980px; margin:0 auto; padding:0;  }
