@@ -1,12 +1,12 @@
-<div class = "le-havre-rounded">Listing sales</div>
+<div class = "le-havre-rounded">Produtos Disponíveis</div>
 <table>
   <tr>
-    <th>Title</th>
-    <th>Price</th>
-    <th>Tax</th>
-    <th>Cost</th>
+    <th>Título</th>
+    <th>Preço</th>
+    <th>Taxa</th>
+    <th>Custo</th>
     <th>Lucro</th>
-    <th>Quantity</th>
+    <th>Quantidade</th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,11 +22,11 @@
     <td><%= sale.quantity %></td>
     <td><%= link_to 'Show', sale %></td>
     <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
-    <td><%= link_to 'Destroy', sale, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', sale, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Sale', new_sale_path %>
+<%= link_to 'Novo Produto', new_sale_path %>
