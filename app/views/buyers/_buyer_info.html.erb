@@ -1,12 +1,27 @@
-<tr>
-        <td class = "column"><%= buyer.name.capitalize.slice(/\w+/) %></span></td>
-        <td><%= buyer.email %></td>
-        <td><%= buyer.nickname %></td>
-        <td><%= buyer.city %>, <%= buyer.state %></td>
-        <td <%if buyer.sale.title.downcase.index("usado")%><%= "class = 'usado'"%><%end%>><%= buyer.sale.title %></td>
-        <td><%= '%.2f' % buyer.profit %></td>
-        <td><%= buyer.sent_at %></td>
-        <td><%= link_to 'Show', buyer %></td>
-        <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
-        <td><%= link_to 'Destroy', buyer, :confirm => 'Are you sure?', :method => :delete %></td>
-      </tr>
+  <tr>
+    <th>Nome</th>
+    <th>E-Mail</th>
+    <th>Apelido</th>
+    <th>Endereço</th>
+    <th>Produto</th>
+    <th>Lucro</th>  
+    <th>Pago?</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% buyers.each do |buyer| %>
+  <tr>
+    <td class = "column"><%= buyer.name.capitalize.slice(/\w+/) %></span></td>
+    <td><%= buyer.email %></td>
+    <td><%= buyer.nickname %></td>
+    <td><%= buyer.city %>, <%= buyer.state %></td>
+    <td <%if buyer.sale.title.downcase.index("usado")%><%= "class = 'usado'"%><%end%>><%= buyer.sale.title %></td>
+    <td><%= '%.2f' % buyer.profit %></td>
+    <td><%= buyer.sent_at %></td>
+    <td><%= link_to 'Show', buyer %></td>
+    <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
+    <td><%= link_to 'Destroy', buyer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<%end%>

@@ -16,7 +16,7 @@ a:hover { text-decoration:underline;}
 .header { width:980px; margin:0 auto; padding:0;}
 /* logo */
 .logo { 
-  font: normal 36px le-havre-rounded; 
+  font: normal 36px "droid-sans"; 
   padding-top: 32px;
   margin:0;
   width:400px; 
@@ -30,7 +30,7 @@ a:hover { text-decoration:underline;}
   
     ;}
 .le-havre-rounded {
-  font: normal 2em le-havre-rounded; line-height: 1; margin-bottom: 0.5em; float: left;
+  font: bold 2em "le-havre-rounded"; line-height: 1; margin-bottom: 0.5em; float: left;
 }
 
 .usado {

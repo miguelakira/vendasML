@@ -2,8 +2,9 @@ class BuyersController < ApplicationController
   # GET /buyers
   # GET /buyers.xml
   def index
-    @buyers = Buyer.all
-
+    @buyers_in_progress = Buyer.find(:all, :conditions => {:sent => false, :finished => false})
+    @buyers_sent = Buyer.find(:all, :conditions => {:sent => true, :finished => false})
+    @buyers_finished = Buyer.find(:all, :conditions => {:finished => true})
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @buyers }

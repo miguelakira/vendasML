@@ -1,73 +1,33 @@
 <div class = "le-havre-rounded">Compras em Aberto</div>
-
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>E-Mail</th>
-    <th>Apelido</th>
-    <th>Endereço</th>
-    <th>Produto</th>
-    <th>Lucro</th>  
-    <th>Pago?</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @buyers.each do |buyer| %>
-  <% if buyer.sent == false && buyer.finished == false  %>
-      <%= render :partial => 'buyer_info_new', :locals => { :buyer => buyer }  %>
-  <%end%>
-<% end %>
-</table>
-
 <br />
+<table>
+  <% if @buyers_in_progress.nil? %>
+    <td>Não há compradores nesta seção.</td>
+  <% else %>
+      <%= render :partial => 'buyer_info_new', :locals => { :buyers => @buyers_in_progress }  %>
+  <%end%>
+</table>
+<br />
+
 <div class = "le-havre-rounded">Compras Enviadas</div>
 <table>
-
-
-  <tr>
-    <th>Nome</th>
-    <th>E-Mail</th>
-    <th>Apelido</th>
-    <th>Endereço</th>
-    <th>Produto</th>
-    <th>Lucro</th>
-    <th>Enviado Em</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @buyers.each do |buyer| %>  
-  <% if buyer.sent == true && buyer.finished == false %>
-    <%= render :partial => 'buyer_info', :locals => { :buyer => buyer }  %>  <%end%>
-<% end %>
+  <% if @buyers_sent.nil? %>
+    <td>Não há compradores nesta seção.</td>
+  <% else %>
+      <%= render :partial => 'buyer_info', :locals => { :buyers => @buyers_sent }  %> 
+  <%end%>
 </table>
 <br />
+
+
 <div class = "le-havre-rounded">Compras Finalizadas</div>
 <table>
-  <tr>
-    <th>Nome</th>
-    <th>E-Mail</th>
-    <th>Apelido</th>
-    <th>Endereço</th>
-    <th>Produto</th>
-    <th>Lucro</th>
-    <th>Enviado Em</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @buyers.each do |buyer| %>
-  <% if buyer.finished == true %>
-    <%= render :partial => 'buyer_info', :locals => { :buyer => buyer }  %>
-  <%end%>
-<% end %>
+  <% if @buyers_finished.empty? %>
+    <td>Não há compradores nesta seção.</td>
+  <% else %>
+    <%= render :partial => 'buyer_info', :locals => { :buyers => @buyers_finished }  %>
+  <% end %>
 </table>
-
-
 <br />
 
 <%= link_to 'New Buyer', new_buyer_path %>
