@@ -5,7 +5,7 @@ class BuyerMailer < ActionMailer::Base
     @buyer = buyer
     @site = "http://bit.ly/PS3Vendas"
     mail(:to => "#{buyer.name} <#{buyer.email}>", 
-        :subject => "(Jogo) " + buyer.sale.title
+        :subject => "(Jogo) #{buyer.sale.title}"
         )
   end
 
@@ -13,7 +13,7 @@ class BuyerMailer < ActionMailer::Base
     @buyer = buyer
     @site = "http://bit.ly/PS3Vendas"
     mail(:to => "#{buyer.name} <#{buyer.email}>", 
-        :subject => "(Jogo) " + buyer.sale.title
+        :subject => "(Jogo) {#buyer.sale.title} - Pagamento Confirmado!"
         )
   end
 
@@ -21,7 +21,7 @@ class BuyerMailer < ActionMailer::Base
     @buyer = buyer
     @site = "http://bit.ly/PS3Vendas"
     mail(:to => "#{buyer.name} <#{buyer.email}>", 
-        :subject => "(Jogo) " + buyer.sale.title
+        :subject => "(Jogo) {#buyer.sale.title} - Entrega concluida"
         )
   end
 
@@ -29,7 +29,7 @@ class BuyerMailer < ActionMailer::Base
     @buyer = buyer
     @site = "http://bit.ly/PS3Vendas"
     mail(:to => "#{buyer.name} <#{buyer.email}>", 
-        :subject => "(Jogo) " + buyer.sale.title
+        :subject => "(Jogo) {#buyer.sale.title} ENVIADO!  " 
         )
   end
 
