@@ -28,9 +28,7 @@
     <%= render :partial => 'buyer_info', :locals => { :buyers => @buyers_finished }  %>
   <% end %>
 </table>
-<br />
 
-
-<p><b>Lucro Total: <%= '%.2f' % @total_profit %> </b></p>
+<p style = "text-align:right; color:blue"><b>Lucro Total: <%= '%.2f' % @total_profit %> </b></p>
 
 <%= link_to 'Adicionar Comprador', new_buyer_path %>
