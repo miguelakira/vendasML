@@ -14,7 +14,7 @@
 
 <% buyers.each do |buyer| %>
   <tr>
-    <td class = "column"><%= buyer.name.capitalize.slice(/\w+/) %></span></td>
+    <td><%= link_to buyer.name.capitalize.slice(/\w+/), buyer %></td>
     <td><%= buyer.email %></td>
     <td><%= buyer.nickname %></td>
     <td><%= buyer.city %>, <%= buyer.state %></td>
