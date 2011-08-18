@@ -14,7 +14,7 @@
 
 <% @sales.each do |sale| %>
   <tr>
-    <td <%if sale.title.index("usado")%><%= "class = 'usado'"%><%end%>><%= sale.title %></td>
+    <td <%if sale.quantity == 0%><%= "class = 'red'"%><%end%>><%= sale.title %></td>
     <td><%= sale.price %></td>
     <td><%= sale.tax %></td>
     <td><%= sale.cost %></td>
