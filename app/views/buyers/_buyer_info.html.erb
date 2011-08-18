@@ -5,6 +5,7 @@
     <th>Endereço</th>
     <th>Produto</th>
     <th>Lucro</th>  
+    <th>Rastreio</th>
     <th>Enviado em</th>
     <th></th>
     <th>Ações</th>
@@ -19,6 +20,7 @@
     <td><%= buyer.city %>, <%= buyer.state %></td>
     <td <%if buyer.sale.title.downcase.index("usado")%><%= "class = 'usado'"%><%end%>><%= buyer.sale.title %></td>
     <td><%= '%.2f' % buyer.profit %></td>
+    <td><%= buyer.tracking %></td>
     <td><%= buyer.sent_at %></td>
     <td><%= link_to 'Mostrar', buyer %></td>
     <td><%= link_to 'Editar', edit_buyer_path(buyer) %></td>

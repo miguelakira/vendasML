@@ -22,7 +22,7 @@
     <td <%unless buyer.paid %><%= "class = 'usado'"%><%end%>><%= buyer.paid %>
     <td><%= link_to 'Mostrar', buyer %></td>
     <td><%= link_to 'Editar', edit_buyer_path(buyer) %></td>
-    <td><%= link_to 'Deletar', buyer, :confirm => 'Tem certeza que deseja deletar?', :method => :delete %></td>
+    <td><%= link_to image_tag("trash.png"),  buyer, :confirm => 'Tem certeza que deseja deletar?', :method => :delete %></td>
   </tr>
 <%end%>
 

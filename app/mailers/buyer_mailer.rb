@@ -4,9 +4,34 @@ class BuyerMailer < ActionMailer::Base
   def nova_compra(buyer)
     @buyer = buyer
     @site = "http://bit.ly/PS3Vendas"
-    mail(:to => @buyer.email, 
+    mail(:to => "#{buyer.name} <#{buyer.email}>", 
         :subject => "(Jogo) " + buyer.sale.title
         )
-    end
+  end
+
+  def pagamento_confirmado(buyer)
+    @buyer = buyer
+    @site = "http://bit.ly/PS3Vendas"
+    mail(:to => "#{buyer.name} <#{buyer.email}>", 
+        :subject => "(Jogo) " + buyer.sale.title
+        )
+  end
+
+  def jogo_entregue(buyer)
+    @buyer = buyer
+    @site = "http://bit.ly/PS3Vendas"
+    mail(:to => "#{buyer.name} <#{buyer.email}>", 
+        :subject => "(Jogo) " + buyer.sale.title
+        )
+  end
+
+  def jogo_enviado(buyer)
+    @buyer = buyer
+    @site = "http://bit.ly/PS3Vendas"
+    mail(:to => "#{buyer.name} <#{buyer.email}>", 
+        :subject => "(Jogo) " + buyer.sale.title
+        )
+  end
+
 
 end
