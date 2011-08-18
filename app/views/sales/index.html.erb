@@ -19,7 +19,7 @@
     <td><%= sale.tax %></td>
     <td><%= sale.cost %></td>
     <td><%= '%.2f' % (sale.price - (sale.price * sale.tax) - sale.cost) %></td>
-    <td><%= sale.quantity %></td>
+    <td <%if sale.quantity == 0%><%= "class = 'red'"%><%end%>> <%= sale.quantity %></td>    
     <td><%= link_to 'Mostrar', sale %></td>
     <td><%= link_to 'Editar', edit_sale_path(sale) %></td>
     <td><%= link_to image_tag("trash.png"), sale, :confirm => 'Tem certeza que deseja deletar?', :method => :delete %></td>
