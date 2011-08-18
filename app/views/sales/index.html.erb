@@ -22,7 +22,7 @@
     <td><%= sale.quantity %></td>
     <td><%= link_to 'Mostrar', sale %></td>
     <td><%= link_to 'Editar', edit_sale_path(sale) %></td>
-    <td><%= link_to 'Deletar', sale, :confirm => 'Tem certeza que deseja deletar?', :method => :delete %></td>
+    <td><%= link_to image_tag("trash.png"), sale, :confirm => 'Tem certeza que deseja deletar?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
