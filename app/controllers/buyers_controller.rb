@@ -5,6 +5,14 @@ class BuyersController < ApplicationController
     @buyers_in_progress = Buyer.find(:all, :conditions => {:sent => false, :finished => false})
     @buyers_sent = Buyer.find(:all, :conditions => {:sent => true, :finished => false})
     @buyers_finished = Buyer.find(:all, :conditions => {:finished => true})
+    @total_profit = 0
+    unless @buyers_finished.empty?
+      @buyers_finished.each do |buyer| 
+        @total_profit += buyer.profit
+      end
+    end
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @buyers }
