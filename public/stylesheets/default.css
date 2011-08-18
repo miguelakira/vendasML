@@ -131,7 +131,9 @@ Criado por Miguel Akira
 
 .post {
   font:normal 12px;
-
-
-
+}
+table.message p {
+  margin: 0;
+  padding: 0;
+  display:inline;
 }
