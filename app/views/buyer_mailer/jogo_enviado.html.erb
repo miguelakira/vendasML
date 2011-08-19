@@ -1,7 +1,7 @@
 <p> Olá <%= @buyer.name %>,
 
 <%= raw(Message.find_by_title("Jogo Enviado").body) %>
-<p> O código de rastreio é: <%= buyer.tracking %>
+<p> O código de rastreio é: <%= @buyer.tracking %>
 <p>Atenciosamente, </p>
 <p>--</p>
 <p>Miguel Akira</p>

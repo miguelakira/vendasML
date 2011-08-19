@@ -1,19 +1,29 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  email: MyString
+miguel:
+  name: Miguel
+  email: MyString@fdfdf.com
   nickname: MyString
-  sale_id: 1
+  sale: uncharted
+  address: av. nestor fogaca 687 CEP 4444222
+  city: londrina
+  state: PR
+  tracking: RM12345678901BR
   sent: false
+  paid: false
   finished: false
   sent_at: 2011-08-16 16:35:43
 
 two:
-  name: MyString
-  email: MyString
-  nickname: MyString
+  name: MyString2
+  email: MyString@hotmv.com
+  nickname: MyString2
   sale_id: 1
+  address: av. nestor fogaca 687 CEP 4444222
+  city: londrina
+  state: PR
+  tracking: RM12345678901BR
   sent: false
+  paid: false
   finished: false
   sent_at: 2011-08-16 16:35:43

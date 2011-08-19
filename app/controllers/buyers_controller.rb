@@ -76,9 +76,26 @@ class BuyersController < ApplicationController
   # PUT /buyers/1.xml
   def update
     @buyer = Buyer.find(params[:id])
+    if params[:buyer][:paid] == '1' and @buyer.paid == false
+      envia_mail_pagamento = true
+    end
 
+    if params[:buyer][:sent] == '1' and @buyer.sent == false
+      @buyer.sent_at = Time.now
+      envia_mail_jogo_enviado = true
+    end
+    
+    
     respond_to do |format|
       if @buyer.update_attributes(params[:buyer])
+        if envia_mail_pagamento
+          BuyerMailer.pagamento_confirmado(@buyer).deliver
+        end
+        
+        if envia_mail_jogo_enviado
+          BuyerMailer.jogo_enviado(@buyer).deliver
+        end
+      
         format.html { redirect_to(@buyer, :notice => 'Buyer was successfully updated.') }
         format.xml  { head :ok }
       else

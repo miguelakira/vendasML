@@ -2,8 +2,29 @@ require 'test_helper'
 
 class BuyersControllerTest < ActionController::TestCase
   setup do
-    @buyer = buyers(:one)
+    @buyer = buyers(:miguel)
+    @sale = sales(:uncharted)
   end
+
+  test "buyer attributes should not be empty" do
+    buyer = @buyer
+    assert !buyer.invalid?
+     assert !buyer[:name].nil?
+     assert !buyer[:email].nil?
+     assert !buyer[:nickname].nil?
+     assert !buyer[:sale_id].nil?
+     assert !buyer[:address].nil?
+     assert !buyer[:city].nil?
+     assert !buyer[:state].nil?
+     assert !buyer[:tracking].nil?
+     assert !buyer[:sent].nil?
+     assert !buyer[:paid].nil?
+     assert !buyer[:finished].nil?
+     assert !buyer[:sent_at].nil?
+
+  end
+
+    
 
   test "should get index" do
     get :index
@@ -18,6 +39,7 @@ class BuyersControllerTest < ActionController::TestCase
 
   test "should create buyer" do
     assert_difference('Buyer.count') do
+      
       post :create, :buyer => @buyer.attributes
     end
 

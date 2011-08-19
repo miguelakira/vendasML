@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class BuyerTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "should not save buyer without name" do
+    buyer = Buyer.new
+    assert !buyer.save
   end
 end
+

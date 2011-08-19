@@ -1,6 +1,6 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+uncharted:
   title: MyString
   price: 1.5
   tax: 1.5
