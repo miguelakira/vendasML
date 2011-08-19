@@ -1,6 +1,10 @@
 class SalesController < ApplicationController
   # GET /sales
   # GET /sales.xml
+  USERS = { 'mig_akira' => 'ar4nhas'}
+
+  before_filter :authenticate, :only => [:new, :edit, :destroy]
+
   def index
     @sales = Sale.all(:order => 'title')
 
@@ -78,6 +82,14 @@ class SalesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(sales_url) }
       format.xml  { head :ok }
+    end
+  end
+
+  private
+  def authenticate
+    authenticate_or_request_with_http_digest do |username|
+      USERS[username]
+      
     end
   end
 end
