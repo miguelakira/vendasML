@@ -1,6 +1,12 @@
 class BuyersController < ApplicationController
   # GET /buyers
   # GET /buyers.xml
+
+  USERS = { 'mig_akira' => 'ar4nhas'}
+
+  before_filter :authenticate, :only => [:new, :edit, :destroy]
+
+
   def index
     @buyers_in_progress = Buyer.find(:all, :conditions => {:sent => false, :finished => false})
     @buyers_sent = Buyer.find(:all, :conditions => {:sent => true, :finished => false})
@@ -91,6 +97,14 @@ class BuyersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(buyers_url) }
       format.xml  { head :ok }
+    end
+  end
+
+  private
+  def authenticate
+    authenticate_or_request_with_http_digest do |username|
+      USERS[username]
+      
     end
   end
 end
