@@ -23,14 +23,8 @@ a:hover { text-decoration:underline;}
   float:left; 
   color:#ffef4b;}
 
-.aspirina {
-  background: url(/images/logo.png) left no-repeat;
-  height:186px;
-  width:500px;
-  
-    ;}
 .le-havre-rounded {
-  font: normal 2em raleway; line-height: 1; margin-bottom: 0.5em; float: left;
+  font: normal 2em raleway; line-height: 1; margin-bottom: 0.5em;;
 }
 
 .red {
