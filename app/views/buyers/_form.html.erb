@@ -1,6 +1,6 @@
 <%= form_for(@buyer) do |f| %>
   <% if @buyer.errors.any? %>
-    <div id="error_explanation">
+    <div id="error">
       <h2><%= pluralize(@buyer.errors.count, "error") %> prohibited this buyer from being saved:</h2>
 
       <ul>
@@ -37,11 +37,8 @@
   </div>
   <div class="field">
     <%= f.label :state %><br />
-    <%= f.text_field :state %>
+    <%= f.select(:state, options_for_select(ESTADOS)) %>
   </div>
-
-
-
   <div class="field">
     <%= f.label :sent %><br />
     <%= f.check_box :sent %>
@@ -59,6 +56,11 @@
     <%= f.label :paid %><br />
     <%= f.check_box :paid %>
   </div>
+  <div class="field">
+    <%= f.label "Enviar e-mail?" %><br />
+    <%= check_box_tag :send_mail %>
+  </div>  
+
   <div class="actions">
     <%= f.submit %>
   </div>

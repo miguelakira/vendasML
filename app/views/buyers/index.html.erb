@@ -31,4 +31,7 @@
 
 <p style = "text-align:right; color:blue"><b>Lucro Total: <%= '%.2f' % @total_profit %> </b></p>
 
+<% ESTADOS.each do |estado| %>
+  <%= estado.class %> | 
+<%end%>
 <%= link_to 'Adicionar Comprador', new_buyer_path %>

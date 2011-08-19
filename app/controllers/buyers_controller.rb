@@ -51,7 +51,7 @@ class BuyersController < ApplicationController
   # GET /buyers/1/edit
   def edit
     @buyer = Buyer.find(params[:id])
-    @sales = Sale.all
+    @sales = Sale.find(:all, :conditions => ["quantity > ?", 0])
   end
 
   # POST /buyers
@@ -75,14 +75,16 @@ class BuyersController < ApplicationController
   # PUT /buyers/1
   # PUT /buyers/1.xml
   def update
-    @buyer = Buyer.find(params[:id])
-    if params[:buyer][:paid] == '1' and @buyer.paid == false
-      envia_mail_pagamento = true
-    end
+    @buyer = Buyer.find(params[:id])  
+    if params[:send_mail]
+      if params[:buyer][:paid] == '1' and @buyer.paid == false
+        envia_mail_pagamento = true
+      end
 
-    if params[:buyer][:sent] == '1' and @buyer.sent == false
-      @buyer.sent_at = Time.now
-      envia_mail_jogo_enviado = true
+      if params[:buyer][:sent] == '1' and @buyer.sent == false
+        @buyer.sent_at = Time.now
+        envia_mail_jogo_enviado = true
+      end
     end
     
     
@@ -109,6 +111,10 @@ class BuyersController < ApplicationController
   # DELETE /buyers/1.xml
   def destroy
     @buyer = Buyer.find(params[:id])
+    # ao apagar um comprador, a quantia de produtos deve aumentar em 1, já que a venda foi cancelada.
+    sale = Sale.find_by_id(@buyer.sale_id)
+    sale.quantity += 1
+    sale.update_attributes(:quantity => sale.quantity)
     @buyer.destroy
 
     respond_to do |format|
