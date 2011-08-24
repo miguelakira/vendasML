@@ -43,6 +43,13 @@
     <%= f.select(:state, options_for_select(ESTADOS)) %>
     <% end %>
   </div>
+  <% if @buyer.sent %>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select 'sent_at' %>
+  </div>
+  <% end %>
+
   <div class="field">
     <%= f.label :sent %><br />
     <%= f.check_box :sent %>

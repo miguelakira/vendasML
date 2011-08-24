@@ -1,5 +1,10 @@
 class Buyer < ActiveRecord::Base
-	validates :name, :nickname, :email, :sale_id, :city, :state, :presence => true
+	validates :name, :presence => true
+	validates :nickname, :presence => true
+	validates :sale_id, :presence => true
+	validates :city, :presence => true
+	validates :state, :presence => true
+	
 	belongs_to :sale
     accepts_nested_attributes_for :sale
 end

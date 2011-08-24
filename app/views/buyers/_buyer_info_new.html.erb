@@ -20,6 +20,7 @@
     <td <%if !buyer.paid %><%= "class = 'red'"%>>Não!<%else%>>Sim<%end%>
     <td><%= buyer.email %></td>
     <td><%= link_to image_tag("lupa.png"), buyer %>
+    <%= link_to image_tag("email.png"), edit_buyer_path(buyer) %>
     <%= link_to image_tag("lapis.png"), edit_buyer_path(buyer) %>
     <%= link_to image_tag("trash.png"),  buyer, :confirm => 'Tem certeza que deseja deletar?', :method => :delete %></td>
   </tr>
