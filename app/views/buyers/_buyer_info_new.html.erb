@@ -17,7 +17,7 @@
     <td title = '<%= buyer.address %>'><%= buyer.city %>, <%= buyer.state %></td>
     <td><%= buyer.sale.title %></td>
     <td><%= '%.2f' % buyer.profit %></td>
-    <td <%if !buyer.paid %><%= "class = 'red'"%>>Não!<%else%>><%= "Sim" %><%end%>
+    <td <%if !buyer.paid %><%= "class = 'red'"%>>Não!<%else%>>Sim<%end%>
     <td><%= buyer.email %></td>
     <td><%= link_to image_tag("lupa.png"), buyer %>
     <%= link_to image_tag("lapis.png"), edit_buyer_path(buyer) %>
