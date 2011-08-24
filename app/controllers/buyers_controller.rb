@@ -76,6 +76,10 @@ class BuyersController < ApplicationController
   # PUT /buyers/1.xml
   def update
     @buyer = Buyer.find(params[:id])  
+    if params[:buyer][:sent] == '1' and @buyer.sent == false
+      @buyer.sent_at = Time.now
+    end
+
     if params[:send_mail]
       if params[:buyer][:paid] == '1' and @buyer.paid == false
         envia_mail_pagamento = true
