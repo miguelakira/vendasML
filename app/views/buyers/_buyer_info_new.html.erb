@@ -12,9 +12,9 @@
 
 <% buyers.each do |buyer| %>
   <tr>
-    <td title = <%= buyer.email %>><%= buyer.name.capitalize.slice(/\w+/) %></span></td>
+    <td title = '<%= buyer.email %>'><%= buyer.name.capitalize.slice(/\w+/) %></span></td>
     <td><%= buyer.nickname %></td>
-    <td><%= buyer.city %>, <%= buyer.state %></td>
+    <td title = '<%= buyer.address %>'><%= buyer.city %>, <%= buyer.state %></td>
     <td><%= buyer.sale.title %></td>
     <td><%= '%.2f' % buyer.profit %></td>
     <td <%if !buyer.paid %><%= "class = 'red'"%>>Não!<%else%>><%= "Sim" %><%end%>
