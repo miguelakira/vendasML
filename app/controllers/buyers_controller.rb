@@ -62,7 +62,9 @@ class BuyersController < ApplicationController
     @buyer.sale.quantity = @buyer.sale.quantity - 1
     respond_to do |format|
       if @buyer.save
-        BuyerMailer.nova_compra(@buyer).deliver
+        if params[:send_mail]
+          BuyerMailer.nova_compra(@buyer).deliver
+        end
         format.html { redirect_to(@buyer, :notice => 'Buyer was successfully created.') }
         format.xml  { render :xml => @buyer, :status => :created, :location => @buyer }
       else
