@@ -1,14 +1,14 @@
+     
   <tr>
-    <th>Nome</th>
-    <th>Apelido</th>
-    <th>Endereço</th>
-    <th>Produto</th>
-    <th>Lucro</th>  
-    <th>Rastreio</th>
-    <th>Data</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th width = 100>Nome</th>
+    <th width = 250>Apelido</th>
+    <th width = 200>Endereço</th>
+    <th width = 280>Produto</th>
+    <th width = 10>Lucro</th>  
+    <th width = 100>Rastreio</th>
+    <th width = 20>Data</th>
+    
+    <th width = 10></th>
   </tr>
 
 <% buyers.each do |buyer| %>
@@ -20,8 +20,8 @@
     <td><%= '%.2f' % buyer.profit %></td>
     <td><%= buyer.tracking %></td>
     <td><% unless buyer.sent_at.nil? %> <%= buyer.sent_at.strftime('%d/%m/%y') %> <%end%></td>
-    <td><%= link_to image_tag("lupa.png"), buyer %></td>
-    <td><%= link_to image_tag("lapis.png"), edit_buyer_path(buyer) %></td>
-    <td><%= link_to image_tag("trash.png"), buyer, :confirm => 'Tem certeza que deseja deletar?', :method => :delete %></td>
+    <td><%= link_to image_tag("lupa.png"), buyer %>
+    <%= link_to image_tag("lapis.png"), edit_buyer_path(buyer) %>
+    <%= link_to image_tag("trash.png"),  buyer, :confirm => 'Tem certeza que deseja deletar?', :method => :delete %></td>
   </tr>
 <%end%>
