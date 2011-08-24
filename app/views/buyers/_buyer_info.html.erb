@@ -16,7 +16,7 @@
     <td title = <%= buyer.email %>><%= link_to buyer.name.capitalize.slice(/\w+/), buyer %></td>
     <td><%= buyer.nickname %></td>
     <td><%= buyer.city %>, <%= buyer.state %></td>
-    <td <%if buyer.sale.title.downcase.index("*")%><%= "class = 'red'"%><%end%>><%= buyer.sale.title %></td>
+    <td><%= buyer.sale.title %></td>
     <td><%= '%.2f' % buyer.profit %></td>
     <td><%= buyer.tracking %></td>
     <td><% unless buyer.sent_at.nil? %> <%= buyer.sent_at.strftime('%d/%m/%y') %> <%end%></td>

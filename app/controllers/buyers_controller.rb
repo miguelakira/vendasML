@@ -8,9 +8,9 @@ class BuyersController < ApplicationController
 
 
   def index
-    @buyers_in_progress = Buyer.find(:all, :conditions => {:sent => false, :finished => false})
-    @buyers_sent = Buyer.find(:all, :conditions => {:sent => true, :finished => false})
-    @buyers_finished = Buyer.find(:all, :conditions => {:finished => true})
+    @buyers_in_progress = Buyer.find(:all, :conditions => {:sent => false, :finished => false}, :order => :created_at )
+    @buyers_sent = Buyer.find(:all, :conditions => {:sent => true, :finished => false}, :order => :created_at )
+    @buyers_finished = Buyer.find(:all, :conditions => {:finished => true}, :order => :created_at )
     @total_profit = 0
     unless @buyers_finished.empty?
       @buyers_finished.each do |buyer| 
