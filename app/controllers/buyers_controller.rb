@@ -51,7 +51,7 @@ class BuyersController < ApplicationController
   # GET /buyers/1/edit
   def edit
     @buyer = Buyer.find(params[:id])
-    @sales = Sale.find(:all, :conditions => ["quantity > ?", 0])
+    @sales = Sale.all
   end
 
   # POST /buyers
