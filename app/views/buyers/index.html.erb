@@ -1,6 +1,6 @@
 <div class = "le-havre-rounded">Compras em Aberto</div>
 <br />
-<table>
+<table class = "compras">
   <% if @buyers_in_progress.empty? %>
     <td>Não há compradores nesta seção.</td>
   <% else %>
@@ -10,7 +10,7 @@
 <br />
 
 <div class = "le-havre-rounded">Compras Enviadas</div>
-<table>
+<table class = "compras">
   <% if @buyers_sent.empty? %>
     <td>Não há compradores nesta seção.</td>
   <% else %>
@@ -21,7 +21,7 @@
 
 
 <div class = "le-havre-rounded">Compras Finalizadas</div>
-<table>
+<table class = "compras">
   <% if @buyers_finished.empty? %>
     <td>Não há compradores nesta seção.</td>
   <% else %>
@@ -29,9 +29,5 @@
   <% end %>
 </table>
 
-<p style = "text-align:right; color:blue"><b>Lucro Total: <%= '%.2f' % @total_profit %> </b></p>
-
-<% ESTADOS.each do |estado| %>
-  <%= estado.class %> | 
-<%end%>
+<p style = "text-align:right; color:blue"><b>Lucro Total: <%= '%.2f' % @total_profit %> </b></p>  
 <%= link_to 'Adicionar Comprador', new_buyer_path %>

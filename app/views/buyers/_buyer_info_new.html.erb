@@ -1,27 +1,26 @@
   <tr>
-    <th>Nome</th>
-    <th>E-Mail</th>
-    <th>Apelido</th>
-    <th>Endereço</th>
-    <th>Produto</th>
-    <th>Lucro</th>  
-    <th>Pago?</th>
+    <th width = 100>Nome</th>
+    <th width = 150>Apelido</th>
+    <th width = 200>Endereço</th>
+    <th width = 250 >Produto</th>
+    <th width = 10>Lucro</th>  
+    <th width = 80>Pago?</th>
     <th></th>
-    <th>Ações</th>
     <th></th>
+    <th></th>
+    
   </tr>
 
 <% buyers.each do |buyer| %>
   <tr>
-    <td class = "column"><%= buyer.name.capitalize.slice(/\w+/) %></span></td>
-    <td><%= buyer.email %></td>
+    <td title = <%= buyer.email %>><%= buyer.name.capitalize.slice(/\w+/) %></span></td>
     <td><%= buyer.nickname %></td>
     <td><%= buyer.city %>, <%= buyer.state %></td>
     <td <%if buyer.sale.title.downcase.index("*")%><%= "class = 'red'"%><%end%>><%= buyer.sale.title %></td>
     <td><%= '%.2f' % buyer.profit %></td>
     <td <%if !buyer.paid %><%= "class = 'red'"%>>Não!<%else%>><%= "Sim" %><%end%>
-    <td><%= link_to 'Mostrar', buyer %></td>
-    <td><%= link_to 'Editar', edit_buyer_path(buyer) %></td>
+    <td><%= link_to image_tag("lupa.png"), buyer %></td>
+    <td><%= link_to image_tag("lapis.png"), edit_buyer_path(buyer) %></td>
     <td><%= link_to image_tag("trash.png"),  buyer, :confirm => 'Tem certeza que deseja deletar?', :method => :delete %></td>
   </tr>
 <%end%>

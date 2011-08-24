@@ -1,21 +1,19 @@
   <tr>
     <th>Nome</th>
-    <th>E-Mail</th>
     <th>Apelido</th>
     <th>Endereço</th>
     <th>Produto</th>
     <th>Lucro</th>  
     <th>Rastreio</th>
-    <th>Enviado em</th>
+    <th>Data</th>
     <th></th>
-    <th>Ações</th>
+    <th></th>
     <th></th>
   </tr>
 
 <% buyers.each do |buyer| %>
   <tr>
-    <td><%= link_to buyer.name.capitalize.slice(/\w+/), buyer %></td>
-    <td><%= buyer.email %></td>
+    <td title = <%= buyer.email %>><%= link_to buyer.name.capitalize.slice(/\w+/), buyer %></td>
     <td><%= buyer.nickname %></td>
     <td><%= buyer.city %>, <%= buyer.state %></td>
     <td <%if buyer.sale.title.downcase.index("*")%><%= "class = 'red'"%><%end%>><%= buyer.sale.title %></td>
