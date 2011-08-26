@@ -86,6 +86,13 @@ class MessagesController < ApplicationController
     end
   end
 
+
+  def choose_message
+    @mensagens = Message.all
+    
+
+  end
+
   private
   def authenticate
     authenticate_or_request_with_http_digest do |username|
