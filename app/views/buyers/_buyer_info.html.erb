@@ -13,8 +13,8 @@
 
 <% buyers.each do |buyer| %>
   <tr>
-    <td title = '<%= buyer.email %>'><%= buyer.name.capitalize.slice(/\w+/) %></td>
-    <td><%= buyer.nickname %></td>
+    <td title = '<%= buyer.email %>'><%= truncate(buyer.name.capitalize.slice(/\w+/), :length =>15) %></td>
+    <td><%= truncate(buyer.nickname, :length => 15) %></td>
     <td title = '<%= buyer.address %>'><%= buyer.city %>, <%= buyer.state %></td>
     <td><%= buyer.sale.title %></td>
     <td><%= '%.2f' % buyer.profit %></td>
