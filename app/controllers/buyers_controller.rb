@@ -65,7 +65,7 @@ class BuyersController < ApplicationController
         if params[:send_mail]
           BuyerMailer.nova_compra(@buyer).deliver
         end
-        format.html { redirect_to(@buyer, :notice => 'Buyer was successfully created.') }
+        format.html { redirect_to(buyers_path, :notice => 'Buyer was successfully created.') }
         format.xml  { render :xml => @buyer, :status => :created, :location => @buyer }
       else
         format.html { render :action => "new" }
