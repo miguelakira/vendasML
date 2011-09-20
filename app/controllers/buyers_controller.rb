@@ -2,8 +2,6 @@ class BuyersController < ApplicationController
   # GET /buyers
   # GET /buyers.xml
 
-  USERS = { 'mig_akira' => 'ar4nhas'}
-
   
   
 

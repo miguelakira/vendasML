@@ -2,7 +2,6 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.xml
 
-  USERS = { 'mig_akira' => 'ar4nhas'}
 
   
 
