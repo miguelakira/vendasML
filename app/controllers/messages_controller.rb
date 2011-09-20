@@ -4,10 +4,10 @@ class MessagesController < ApplicationController
 
   USERS = { 'mig_akira' => 'ar4nhas'}
 
-  before_filter :authenticate, :only => [:new, :edit, :destroy]
+  
 
   def index
-    @messages = Message.all
+    @messages = Message.find(:all, :conditions => {:user_id => current_user.id} )
 
     respond_to do |format|
       format.html # index.html.erb
@@ -93,11 +93,5 @@ class MessagesController < ApplicationController
 
   end
 
-  private
-  def authenticate
-    authenticate_or_request_with_http_digest do |username|
-      USERS[username]
-      
-    end
-  end
+
 end

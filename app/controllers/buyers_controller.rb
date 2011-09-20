@@ -4,17 +4,20 @@ class BuyersController < ApplicationController
 
   USERS = { 'mig_akira' => 'ar4nhas'}
 
-  before_filter :authenticate, :only => [:new, :edit, :destroy]
+  
+  
 
 
   def index
-    @buyers_in_progress = Buyer.find(:all, :conditions => {:sent => false, :finished => false}, :order => 'created_at DESC' )
-    @buyers_sent = Buyer.find(:all, :conditions => {:sent => true, :finished => false}, :order => 'created_at DESC' )
-    @buyers_finished = Buyer.find(:all, :conditions => {:finished => true}, :order => 'created_at DESC' )
-    @total_profit = 0
-    unless @buyers_finished.empty?
-      @buyers_finished.each do |buyer| 
-        @total_profit += buyer.profit
+    if current_user
+      @buyers_in_progress = Buyer.find(:all, :conditions => {:user_id => current_user.id, :sent => false, :finished => false}, :order => 'created_at DESC' )
+      @buyers_sent = Buyer.find(:all, :conditions => {:user_id => current_user.id, :sent => true, :finished => false}, :order => 'created_at DESC' )
+      @buyers_finished = Buyer.find(:all, :conditions => {:user_id => current_user.id, :finished => true}, :order => 'created_at DESC' )
+      @total_profit = 0
+      unless @buyers_finished.empty?
+        @buyers_finished.each do |buyer| 
+          @total_profit += buyer.profit
+        end
       end
     end
 
@@ -40,7 +43,7 @@ class BuyersController < ApplicationController
   # GET /buyers/new.xml
   def new
     @buyer = Buyer.new
-    @sales = Sale.find(:all, :conditions => ["quantity > ?", 0])
+    @sales = Sale.find(:all, :conditions => ["quantity > ? AND user_id = ?", 0, current_user.id])
     
     respond_to do |format|
       format.html # new.html.erb
@@ -129,11 +132,4 @@ class BuyersController < ApplicationController
     end
   end
 
-  private
-  def authenticate
-    authenticate_or_request_with_http_digest do |username|
-      USERS[username]
-      
-    end
-  end
 end

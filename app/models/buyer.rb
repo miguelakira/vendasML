@@ -7,6 +7,8 @@ class Buyer < ActiveRecord::Base
 	
 	belongs_to :sale
     accepts_nested_attributes_for :sale
+
+    belongs_to :user
 end
 
   
