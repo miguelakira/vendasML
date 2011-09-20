@@ -1,3 +1,5 @@
+<% if current_user %>
+<p id="notice"><%= notice %></p>
 <div class = "le-havre-rounded">Compras em Aberto</div>
 <br />
 <table class = "compras">
@@ -31,3 +33,9 @@
 
 <p style = "text-align:right; color:blue"><b>Lucro Total: <%= '%.2f' % @total_profit %> </b></p>  
 <%= link_to 'Adicionar Comprador', new_buyer_path %>
+
+<% else %>
+
+É preciso logar
+
+<% end %>

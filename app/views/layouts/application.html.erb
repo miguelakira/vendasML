@@ -30,10 +30,16 @@
       <div class="menu">
         <ul>
           <li><b><a href="/" class="active"><span>Início</span></a></li>
-          <li><a href="/buyers"><span>Compradores</span></a></li>
-          <li><a href="/sales"><span>Produtos</span></a></li>
-          <li><a href="/messages"><span>Mensagens</span></a></li>
-          <li><a href="/contact"><span>Contato</span></a></li></b>
+          <% if current_user %>
+            <li><a href="/sales"><span>Produtos</span></a></li>
+            <li><a href="/messages"><span>Mensagens</span></a></li>
+            <li><%= link_to "Logout", log_out_path %></li>
+            
+
+          <% else %>
+            <li><%= link_to "Login", log_in_path %></li>
+            <li><%= link_to "Cadastro", sign_up_path %></li>
+          <% end %>
         </ul>
       </div> <!-- menu -->
       <div class="clr"></div>
@@ -52,6 +58,9 @@
   <div class = "body_resize">
   
     <%= yield %>
+  
+
+
   </div>
 </div> <!-- main -->  
 <div class="clr"></div>
